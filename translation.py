@@ -2,7 +2,6 @@ class Translation(object):
     START_TEXT = """This is an @KumarS4you clone created using the Open Source code available.
 Source Code: https://github.com/KumarS4you/KSBot
 © @KumarS4you"""
-    umarS4you"""
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
     UPGRADE_TEXT = "<b>Contact @KumarSwamiKS</b>"
