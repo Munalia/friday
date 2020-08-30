@@ -65,14 +65,6 @@ async def youtube_dl_call_back(bot, update):
         if len(url_parts) == 2:
             youtube_dl_url = url_parts[0]
             custom_file_name = url_parts[1]
-            if len(custom_file_name) > 64:
-                await update.message.reply_text(
-                    Translation.IFLONG_FILE_NAME.format(
-                        alimit="64",
-                        num=len(custom_file_name)
-                    )
-                )
-                return
         elif len(url_parts) == 4:
             youtube_dl_url = url_parts[0]
             custom_file_name = url_parts[1]
@@ -248,6 +240,7 @@ async def youtube_dl_call_back(bot, update):
                     img.resize((90, height))
                 img.save(thumb_image_path, "JPEG")
                 # https://pillow.readthedocs.io/en/3.1.x/reference/Image.html#create-thumbnails
+                
             else:
                 thumb_image_path = None
             start_time = time.time()
@@ -330,7 +323,7 @@ async def youtube_dl_call_back(bot, update):
             media_album_p = []
             if images is not None:
                 i = 0
-                caption = "<b>Download By</b> © @KS_AnyDLBot"
+                caption = "© @KS_AnyDLBot"
                 if is_w_f:
                     caption = "/upgrade to Plan D to remove the watermark\n© @AnyDLBot"
                 for image in images:
